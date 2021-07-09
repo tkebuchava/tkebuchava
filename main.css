@@ -1,0 +1,23 @@
+/* იდენდიფიკატორი */
+.colorBlue{
+	/* მეთოდი, თვისება, მნიშვნელობა */
+	color: rgb(42 128 167);
+	font-size: 20px;
+}
+.myFont{
+	font-family: "monospace";
+}
+#sou{
+	text-align: center;
+}
+.mark{
+	background-color: #fbff00
+}
+blockquote{
+	border-left: 4px solid #000;
+	background-color: rgb(204 204 204 / 24%);
+	padding: 20px;
+}
+a{
+	text-decoration: none;
+}
