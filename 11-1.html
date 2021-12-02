@@ -1,0 +1,31 @@
+<html>
+  <head>
+  <style>  //სტილი: გვერდის ფონი - ყვითელი, ტექსტი - ლურჯი
+     body {
+                background-color: yellow;
+           color: blue;
+               }
+  </style>
+  <script language = 'javascript'>	
+   // სცენარი ჯავასკრიპტში
+  function startTime() {                        
+  // startTime() ფუნქციის განსაზღვრა
+   var date = new Date();                
+   /* Date() ობიექტის ახალი date ეგზემპლარის აგება,
+ რომელშიც მიმდინარე თარიღის მნიშვნელობები ჩაიწერება */
+    var hours = date.getHours();  // ცვლად hours-ში მიმდინარე საათის ჩაწერა
+    var minutes = date.getMinutes(); //ცვლად minutes-ში მიმდინარე წუთის ჩაწერა
+    var second= date.getSeconds(); // ცვლად seconds-ში მიმდინარე წამების ჩაწერა
+    if (hours < 10) hours = "0" + hours;/* სტრიქონებში 16-18 პირობითი ოპერატორის                                საშუალებით ერთნიშნა მნიშვნელობების ორნიშნად წარმოდგენა, ცვლადები სტრინგებია*/
+    if (minutes < 10) minutes = "0" + minutes;
+    if (seconds < 10) seconds = "0" + seconds;
+    document.getElementById("time").innerHTML = hours + ":" + minutes + ":" + seconds; /*DOM-ის საშუალებით html ელემენტში, კონკრეტულად 25 სტრიქონში მოცემულ გამოყოფილ არეში, რომლის იდენტიფიკატორია time (document.getElementById("time")), ჩაწერა (innerHTML) საათის, წუთის, წამის (hours + ":" + minutes + ":" + seconds)*/
+    setTimeout(startTime, 1000); /* setTimeout() - ეს არის ფუნქციის გამოძახების დაგეგმვა, კერძოდ ამ შემთხვევაში ფუნქცია startTime გამოიძახება 1000 მილიწამის ანუ 1 წამის შემდეგ. გამოიძახება ერთხელ. მაგრამ რადგანაც დამგეგმავი იძახებს იმ ფუნქციას რომელშიც თვითონ არის  (რეკურსია) მაშინ ეს დამგეგმავი სულ იმუშავებს - ხდება ჩაციკვლა */
+     }
+  </script>
+ </head>
+  <body onLoad = 'startTime()' >
+  
+   <b>დრო საიტზე: <span id="time"></span></b>
+   </body>
+   </html>
